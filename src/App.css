@@ -1,0 +1,369 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 70px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    125deg,
+    #428dff 0%,
+    #5365e9 38%,
+    #8243e5 72%,
+    #ae4de9 100%
+  );
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.circle-one {
+  width: 350px;
+  height: 350px;
+  top: -180px;
+  left: -100px;
+  background: rgba(255,255,255,0.16);
+}
+
+.circle-two {
+  width: 400px;
+  height: 400px;
+  bottom: -210px;
+  right: -130px;
+  background: rgba(255,255,255,0.1);
+}
+
+.converter-card {
+  width: 100%;
+  max-width: 880px;
+  padding: 35px;
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 25px;
+  box-shadow: 0 25px 70px rgba(24,26,99,0.25);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 15px 10px 45px;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 52px;
+  font-weight: 700;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#347fff,#6837eb);
+  box-shadow: 0 10px 25px rgba(86,83,236,0.22);
+}
+
+.header h1 {
+  font-size: clamp(25px, 4vw, 40px);
+  letter-spacing: -1.5px;
+  color: #101d57;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.header h1 span {
+  background: linear-gradient(90deg,#2767f5,#6225e5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.header p {
+  color: #69759f;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.converter-box {
+  padding: 30px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 35px rgba(47,62,137,0.07);
+}
+
+.currency-grid {
+  display: grid;
+  grid-template-columns: 1fr 70px 1fr;
+  gap: 20px;
+  align-items: end;
+}
+
+.currency-field {
+  min-width: 0;
+}
+
+.currency-field label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #17265b;
+}
+
+.select-wrapper {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 15px;
+  border: 2px solid #d8e0f3;
+  border-radius: 13px;
+  background: #f8fbff;
+  transition: 0.3s;
+}
+
+.flag {
+  font-size: 28px;
+  line-height: 1;
+}
+
+select {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #122359;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.currency-field input,
+.output-input {
+  width: 100%;
+  height: 70px;
+  margin-top: 15px;
+  padding: 0 18px;
+  border: 2px solid #d8e0f3;
+  border-radius: 13px;
+  background: #f9fbff;
+  color: #11235b;
+  font-size: 25px;
+  font-weight: 700;
+  outline: none;
+}
+
+.output-input {
+  display: flex;
+  align-items: center;
+  overflow-wrap: anywhere;
+  height: auto;
+  min-height: 70px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background: #f1f6ff;
+}
+
+input:focus,
+.select-wrapper:focus-within {
+  border-color: #6b57ed;
+  box-shadow: 0 0 0 4px rgba(107,87,237,0.1);
+}
+
+.swap-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 35px;
+}
+
+.swap-btn {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  background: linear-gradient(135deg,#3c79ff,#8032e8);
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: 0 7px 20px rgba(97,67,231,0.25);
+  transition: 0.3s;
+}
+
+.swap-btn:hover {
+  transform: rotate(180deg);
+}
+
+.convert-btn {
+  width: 100%;
+  margin-top: 35px;
+  padding: 19px;
+  border: none;
+  border-radius: 13px;
+  background: linear-gradient(100deg,#a02af2,#6943f5,#287bff);
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(98,76,235,0.18);
+  transition: 0.3s;
+}
+
+.convert-btn span {
+  margin-right: 12px;
+  font-size: 25px;
+}
+
+.convert-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(98,76,235,0.3);
+}
+
+.convert-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result-card {
+  margin-top: 30px;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border-radius: 16px;
+  background: linear-gradient(110deg,#eeebff,#e8dfff);
+}
+
+.result-icon {
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#a265fa,#6035db);
+  color: white;
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-content {
+  min-width: 0;
+}
+
+.result-content h3 {
+  color: #6137d3;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.result-content h2 {
+  color: #5025cc;
+  font-size: clamp(17px, 2.7vw, 27px);
+  overflow-wrap: anywhere;
+}
+
+.result-content p {
+  margin-top: 10px;
+  color: #6c70a4;
+  font-size: 14px;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 28px;
+  color: #8b94b6;
+  font-size: 12px;
+}
+
+.error {
+  color: #e33c62;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 650px) {
+  .app {
+    padding: 25px 12px;
+  }
+
+  .converter-card {
+    padding: 22px 15px;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+    margin: 10px 0 30px;
+    gap: 15px;
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+  }
+
+  .converter-box {
+    padding: 20px 15px;
+  }
+
+  .currency-grid {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .swap-container {
+    padding: 5px 0;
+  }
+
+  .swap-btn {
+    transform: rotate(90deg);
+  }
+
+  .swap-btn:hover {
+    transform: rotate(270deg);
+  }
+
+  .result-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 22px 15px;
+  }
+
+  .currency-field input,
+  .output-input {
+    font-size: 21px;
+  }
+}
